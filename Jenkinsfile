@@ -22,6 +22,16 @@ pipeline
             steps {
                  echo "Some code deploy..."
             }
-        }     
-}
+        }    
+        stage ('Email') {
+            steps{
+                mail bcc: 'rathoodgopalsomlal98@gmail.com', body: '''Congrats for completing job.
+
+                Thanks
+
+                Rathod Gopal
+                8008064913''', cc: 'manikanta.4b1@gmail.com', from: '', replyTo: '', subject: 'Groovy Pipeline scripting successfully deployed', to: 'rathoodgopal98@gmail.com'
+                            }
+                    }
+                }
 }
